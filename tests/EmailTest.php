@@ -11,4 +11,10 @@ final class EmailTest extends TestCase
             Email::fromString('user@example.com')
         );
     }
+
+    public function testInvalidEmail(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        Email::fromString('invalid');
+    }
 }
